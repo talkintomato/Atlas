@@ -1,16 +1,8 @@
 "use strict";
-const { Model } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-  class Item extends Model {
-    static associate(models) {
-      Item.belongsToMany(models.Section, {
-        through: "SectionItem",
-        foreignKey: "ItemId",
-      });
-    }
-  }
-  Item.init(
+  const Item = sequelize.define(
+    "Item",
     {
       id: {
         type: DataTypes.UUID,
@@ -27,14 +19,42 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      description: DataTypes.STRING,
-      price: DataTypes.FLOAT,
+      description: {
+        type: DataTypes.STRING,
+      },
+      price: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+      },
     },
     {
-      timestamps: true,
       sequelize,
-      modelName: "Item",
+      modelName: "Item", // Ensure to specify the model name
+      timestamps: true,
     },
   );
+
+  Item.associate = function (models) {
+    // Many-to-Many: Section <-> Item
+    Item.belongsToMany(models.Section, {
+      through: "SectionItem",
+      foreignKey: "ItemId",
+      otherKey: "SectionId",
+    });
+
+    // Many-to-Many: ModifierGroup <-> Item
+    Item.belongsToMany(models.ModifierGroup, {
+      through: "ItemModifierGroup",
+      foreignKey: "ItemId",
+      otherKey: "ModifierGroupId",
+    });
+
+    // Direct relationship with Modifiers
+    Item.hasMany(models.Modifier, {
+      foreignKey: "ItemId",
+      as: "modifiers",
+    });
+  };
+
   return Item;
 };

@@ -1,20 +1,8 @@
 "use strict";
-const { Model, DataTypes } = require("sequelize");
 
-module.exports = (sequelize) => {
-  class Section extends Model {
-    static associate(models) {
-      Section.belongsToMany(models.Menu, {
-        through: "MenuSection",
-        foreignKey: "SectionId",
-      });
-      Section.belongsToMany(models.Item, {
-        through: "SectionItem",
-        foreignKey: "SectionId",
-      });
-    }
-  }
-  Section.init(
+module.exports = (sequelize, DataTypes) => {
+  const Section = sequelize.define(
+    "Section",
     {
       id: {
         type: DataTypes.UUID,
@@ -33,10 +21,22 @@ module.exports = (sequelize) => {
       },
     },
     {
-      timestamps: true,
       sequelize,
+      timestamps: true,
       modelName: "Section",
     },
   );
+
+  Section.associate = (models) => {
+    Section.belongsToMany(models.Menu, {
+      through: "MenuSection",
+      foreignKey: "SectionId",
+    });
+    Section.belongsToMany(models.Item, {
+      through: "SectionItem",
+      foreignKey: "SectionId",
+    });
+  };
+
   return Section;
 };

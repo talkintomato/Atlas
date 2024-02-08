@@ -1,16 +1,8 @@
 "use strict";
-const { Model, DataTypes } = require("sequelize");
 
-module.exports = (sequelize) => {
-  class Menu extends Model {
-    static associate(models) {
-      Menu.belongsToMany(models.Section, {
-        through: "MenuSection",
-        foreignKey: "MenuId",
-      });
-    }
-  }
-  Menu.init(
+module.exports = (sequelize, DataTypes) => {
+  const Menu = sequelize.define(
+    "Menu",
     {
       id: {
         type: DataTypes.UUID,
@@ -19,19 +11,36 @@ module.exports = (sequelize) => {
         allowNull: false,
         unique: true,
       },
-      label: DataTypes.STRING,
+      label: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       state: {
         type: DataTypes.ENUM("active", "inactive"),
         allowNull: false,
       },
-      start_date: DataTypes.DATE,
-      end_date: DataTypes.DATE,
+      start_date: {
+        type: DataTypes.DATE,
+        allowNull: true,
+      },
+      end_date: {
+        type: DataTypes.DATE,
+        allowNull: true,
+      },
     },
     {
       timestamps: true,
       sequelize,
-      modelName: "Menu",
     },
   );
+
+  Menu.associate = function (models) {
+    Menu.belongsToMany(models.Section, {
+      through: "MenuSection",
+      foreignKey: "MenuId",
+      otherKey: "SectionId",
+    });
+  };
+
   return Menu;
 };

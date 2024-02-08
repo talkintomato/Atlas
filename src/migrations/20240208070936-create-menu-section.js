@@ -1,23 +1,23 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('MenuSection', {
+    return queryInterface.createTable("MenuSection", {
       MenuId: {
         type: Sequelize.UUID,
         allowNull: false,
-        references: { model: 'Menu', key: 'id' },
+        references: { model: "Menu", key: "id" },
         primaryKey: true,
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
       },
       SectionId: {
         type: Sequelize.UUID,
         allowNull: false,
-        references: { model: 'Section', key: 'id' },
+        references: { model: "Section", key: "id" },
         primaryKey: true,
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
       },
       display_order: {
         type: Sequelize.INTEGER,
@@ -34,6 +34,6 @@ module.exports = {
     });
   },
   down: async (queryInterface) => {
-    await queryInterface.dropTable('MenuSection');
+    await queryInterface.dropTable("MenuSection");
   },
 };
