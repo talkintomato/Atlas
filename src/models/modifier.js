@@ -41,11 +41,13 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Modifier.associate = (models) => {
+    // Direct relationship with Item
     Modifier.belongsTo(models.Item, {
       foreignKey: "itemId",
       as: "item",
     });
 
+    // Many-to-Many: ModifierGroup <-> Modifier
     Modifier.belongsTo(models.ModifierGroup, {
       foreignKey: "modifierGroupId",
       as: "modifierGroup",

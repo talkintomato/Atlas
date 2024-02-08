@@ -35,13 +35,13 @@ module.exports = (sequelize, DataTypes) => {
     // Many-to-Many: ModifierGroup <-> Item
     ModifierGroup.belongsToMany(models.Item, {
       through: "ItemModifierGroup",
-      foreignKey: "modifierGroupId",
-      otherKey: "itemId",
+      foreignKey: "ModifierGroupId",
+      otherKey: "ItemId",
     });
 
     // One-to-Many: ModifierGroup -> Modifier
     ModifierGroup.hasMany(models.Modifier, {
-      foreignKey: "modifierGroupId",
+      foreignKey: "ModifierGroupId",
       as: "modifiers",
     });
   };

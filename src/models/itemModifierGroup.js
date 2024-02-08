@@ -35,10 +35,10 @@ module.exports = (sequelize, DataTypes) => {
     ModifierGroup.belongsToMany(models.Item, {
       through: "ItemModifierGroup",
       foreignKey: "ModifierGroupId",
-      otherKey: "itemId",
+      otherKey: "ItemId",
     });
 
-    // Many-to-Many: ModifierGroup <-> Item
+    // Many-to-Many: ModifierGroup <-> Modifier
     ModifierGroup.hasMany(models.Modifier, {
       foreignKey: "ModifierGroupId",
     });
