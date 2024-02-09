@@ -24,7 +24,8 @@ The database schema is designed with the following relationships:
 
 ## Hosting
 
-The database is hosted on Supabase, providing a scalable and managed PostgreSQL database service. The server is hosted on Render, offering a powerful yet simple platform for deploying and managing web applications and databases.
+The database is hosted on Supabase.
+The server is hosted on Render.
 
 ## Setup
 
