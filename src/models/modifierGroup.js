@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       timestamps: true,
       sequelize,
-      modelName: "ModifierGroup", // It's a good practice to explicitly specify the model name
+      modelName: "ModifierGroup",
     },
   );
 
