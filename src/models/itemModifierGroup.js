@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const ItemModifierGroup = sequelize.define(
     "ItemModifierGroup",
     {
-      itemid: {
+      itemId: {
         type: DataTypes.UUID,
         allowNull: false,
         references: {
