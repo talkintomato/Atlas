@@ -37,8 +37,8 @@ module.exports = (sequelize, DataTypes) => {
   Menu.associate = function (models) {
     Menu.belongsToMany(models.Section, {
       through: "MenuSection",
-      foreignKey: "MenuId",
-      otherKey: "SectionId",
+      foreignKey: "menuId",
+      otherKey: "sectionId",
     });
   };
 

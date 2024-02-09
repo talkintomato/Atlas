@@ -38,20 +38,20 @@ module.exports = (sequelize, DataTypes) => {
     // Many-to-Many: Section <-> Item
     Item.belongsToMany(models.Section, {
       through: "SectionItem",
-      foreignKey: "ItemId",
-      otherKey: "SectionId",
+      foreignKey: "itemId",
+      otherKey: "sectionId",
     });
 
     // Many-to-Many: ModifierGroup <-> Item
     Item.belongsToMany(models.ModifierGroup, {
       through: "ItemModifierGroup",
-      foreignKey: "ItemId",
-      otherKey: "ModifierGroupId",
+      foreignKey: "itemId",
+      otherKey: "modifierGroupId",
     });
 
     // Direct relationship with Modifiers
     Item.hasMany(models.Modifier, {
-      foreignKey: "ItemId",
+      foreignKey: "itemId",
       as: "modifiers",
     });
   };
