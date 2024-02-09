@@ -55,6 +55,7 @@ query {
             items {
                 id
                 label
+                description
                 modifierGroups {
                     id
                     modifiers {
