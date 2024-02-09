@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       itemId: {
         type: DataTypes.UUID,
         allowNull: false,
+        primaryKey: true,
         references: {
           model: "Item",
           key: "id",
@@ -15,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       modifierGroupId: {
         type: DataTypes.UUID,
         allowNull: false,
+        primaryKey: true,
         references: {
           model: "ModifierGroup",
           key: "id",

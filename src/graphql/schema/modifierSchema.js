@@ -4,9 +4,9 @@ const modifierSchema = gql`
   type Modifier {
     itemId: ID!
     modifierGroupId: ID!
-    display_order: Int
-    default_quantity: Int
-    price_override: Float
+    displayOrder: Int
+    defaultQuantity: Int
+    priceOverride: Float
     item: Item
     modifierGroup: ModifierGroup
   }

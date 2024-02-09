@@ -1,4 +1,4 @@
-const { Item } = require("../../models");
+const { Item, } = require('../../models');
 
 const itemResolvers = {
   Query: {
@@ -6,7 +6,7 @@ const itemResolvers = {
     item: async (_, { id }) => await Item.findByPk(id),
   },
   Item: {
-    modifiers: async (item) => await item.getModifiers(),
+    modifierGroups: async (item) => await item.getModifierGroups()
   },
 };
 

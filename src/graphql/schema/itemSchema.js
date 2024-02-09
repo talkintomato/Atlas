@@ -7,7 +7,7 @@ const itemSchema = gql`
     label: String
     description: String
     price: Float
-    modifiers: [Modifier]
+    modifierGroups: [ModifierGroup!]!
   }
 
   extend type Query {

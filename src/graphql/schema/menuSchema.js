@@ -5,8 +5,8 @@ const menuSchema = gql`
     id: ID!
     label: String
     state: String
-    start_date: String
-    end_date: String
+    startDate: String
+    endDate: String
     sections: [Section]
   }
 

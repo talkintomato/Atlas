@@ -4,8 +4,8 @@ const modifierGroupSchema = gql`
   type ModifierGroup {
     id: ID!
     label: String
-    selection_required_min: Int
-    selection_required_max: Int
+    selectionRequiredMin: Int
+    selectionRequiredMax: Int
     modifiers: [Modifier]
   }
 
