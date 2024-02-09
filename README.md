@@ -40,9 +40,10 @@ The server is hosted on Render.
 1. Clone the repository:
 2. Install dependencies: `npm install`
 4. `cd ./src`
-4. run migration - `npx sequelize db:migrate`
-5. run seeder - `npx sequelize db:seed:all`
-6. run `npm start`
+5. Change DB variables as desired in ./src/config/config.js
+6. run migration - `npx sequelize db:migrate`
+7. run seeder - `npx sequelize db:seed:all`
+8. run `npm start`
 
 ### Available Querys 
 Query All Menus
