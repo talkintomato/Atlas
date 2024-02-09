@@ -72,7 +72,8 @@ query {
 
 ### Mutations
 
-# Create Ranch as a product
+#### Create Ranch as a product
+```
 mutation {
   createProduct(
     label: "Ranch sauce",
@@ -85,8 +86,9 @@ mutation {
     price
   }
 }
-
-# Create association for Ranch with Sauce ModifierGroup
+```
+#### Create an association for Ranch with Sauce ModifierGroup
+```
 mutation {
   createModifierAndAssociate( 
         priceOverride: 1.00,
@@ -102,15 +104,19 @@ mutation {
         itemId
         }
     }
-
-# Associate an item and modifierGroup
+```
+#### Associate an item and modifierGroup
+```
 mutation {
   associateItemModifierGroup(
     itemId: <item.id>
     modifierGroupId: <modifierGroupId>
   )
 }
+```
 
+
+Several other mutations have been defined such as updateModifierGroup, deleteModifierGroup, createComponent, updateItem and deleteItem. 
 
 ### Considerations and Improvements
 
