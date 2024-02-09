@@ -1,7 +1,7 @@
-const express = require('express');
-const { ApolloServer } = require('apollo-server-express');
-const typeDefs = require('./graphql/schema'); 
-const resolvers = require('./graphql/resolvers'); 
+const express = require("express");
+const { ApolloServer } = require("apollo-server-express");
+const typeDefs = require("./graphql/schema");
+const resolvers = require("./graphql/resolvers");
 
 async function startServer() {
   const app = express();
@@ -12,12 +12,14 @@ async function startServer() {
 
   await apolloServer.start();
 
-  apolloServer.applyMiddleware({ app, path: '/graphql' });
+  apolloServer.applyMiddleware({ app, path: "/graphql" });
 
   const PORT = process.env.PORT || 4000;
 
   app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}${apolloServer.graphqlPath}`);
+    console.log(
+      `Server running at http://localhost:${PORT}${apolloServer.graphqlPath}`,
+    );
   });
 }
 

@@ -1,4 +1,4 @@
-const { Item } = require('../../models');
+const { Item } = require("../../models");
 
 const itemResolvers = {
   Query: {

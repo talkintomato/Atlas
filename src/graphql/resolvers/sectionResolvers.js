@@ -1,4 +1,4 @@
-const { Section } = require('../../models');
+const { Section } = require("../../models");
 
 const sectionResolvers = {
   Query: {

@@ -1,8 +1,8 @@
-const menuResolvers = require('./menuResolvers');
-const sectionResolvers = require('./sectionResolvers');
-const itemResolvers = require('./itemResolvers');
-const modifierGroupResolvers = require('./modifierGroupResolvers');
-const modifierResolvers = require('./modifierResolvers');
+const menuResolvers = require("./menuResolvers");
+const sectionResolvers = require("./sectionResolvers");
+const itemResolvers = require("./itemResolvers");
+const modifierGroupResolvers = require("./modifierGroupResolvers");
+const modifierResolvers = require("./modifierResolvers");
 
 const resolvers = {
   Query: {

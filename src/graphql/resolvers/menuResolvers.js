@@ -1,4 +1,4 @@
-const { Menu } = require('../../models');
+const { Menu } = require("../../models");
 
 const menuResolvers = {
   Query: {

@@ -1,9 +1,9 @@
-const { gql } = require('apollo-server-express');
-const menuSchema = require('./menuSchema');
-const sectionSchema = require('./sectionSchema');
-const itemSchema = require('./itemSchema');
-const modifierGroupSchema = require('./modifierGroupSchema');
-const modifierSchema = require('./modifierSchema');
+const { gql } = require("apollo-server-express");
+const menuSchema = require("./menuSchema");
+const sectionSchema = require("./sectionSchema");
+const itemSchema = require("./itemSchema");
+const modifierGroupSchema = require("./modifierGroupSchema");
+const modifierSchema = require("./modifierSchema");
 
 const linkSchema = gql`
   scalar Date
@@ -11,7 +11,7 @@ const linkSchema = gql`
   type Query {
     _: Boolean
   }
-  
+
   type Mutation {
     _: Boolean
   }

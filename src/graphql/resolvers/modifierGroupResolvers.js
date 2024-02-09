@@ -1,4 +1,4 @@
-const { ModifierGroup } = require('../../models');
+const { ModifierGroup } = require("../../models");
 
 const modifierGroupResolvers = {
   Query: {
