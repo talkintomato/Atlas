@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
         allowNull: false,
         references: {
-          model: "Menu", // Ensure this matches the table name in the migration
+          model: "Menu",
           key: "id",
         },
         primaryKey: true,
@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
         allowNull: false,
         references: {
-          model: "Section", // Ensure this matches the table name in the migration
+          model: "Section", 
           key: "id",
         },
         primaryKey: true,
@@ -30,6 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       timestamps: true,
+      tableName: "MenuSection",
       indexes: [
         {
           unique: true,

@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       timestamps: true,
       sequelize,
-      modelName: "ModifierGroup",
+      tableName: "ModifierGroup",
     },
   );
 
@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
     // One-to-Many: ModifierGroup -> Modifier
     ModifierGroup.hasMany(models.Modifier, {
       foreignKey: "ModifierGroupId",
-      as: "modifiers",
+      as: "modifier",
     });
   };
 
