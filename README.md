@@ -44,7 +44,8 @@ The database is hosted on Supabase, providing a scalable and managed PostgreSQL 
 6. run `npm start`
 
 ### Available Querys 
-
+Query All Menus
+```
 query {
     menus {
         id
@@ -70,6 +71,37 @@ query {
         }
     }
 }
+```
+
+Query Menu by Id
+```
+query {
+    menu (id) {
+        id
+        label
+        sections {
+            id
+            label
+            items {
+                id
+                label
+                description
+                modifierGroups {
+                    id
+                    modifiers {
+                        displayOrder
+                        item {
+                            id
+                            label
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+```
+similar query functions are available for the other entities.
 
 ### Mutations
 
