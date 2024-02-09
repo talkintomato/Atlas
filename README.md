@@ -6,6 +6,7 @@ This project is designed to manage a complex database schema for a menu manageme
 As it is deployed on a free tier request may take time to process due to cold starts. 
 
 ## Relationships
+![Entity Relationship Diagram](erd.png)
 
 The database schema is designed with the following relationships:
 
