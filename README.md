@@ -1,6 +1,9 @@
-# Project Name
+# Atlas Backend
 
-This project is designed to manage a complex database schema for a menu management system. It leverages Sequelize, a Node.js ORM, for interacting with a PostgreSQL database. This setup allows for robust management of relationships between menus, sections, items, modifiers, and modifier groups.
+This project is designed to manage a complex database schema for a menu management system. It leverages Sequelize, for interacting with a PostgreSQL database. This setup allows for robust management of relationships between menus, sections, items, modifiers, and modifier groups.
+
+## Running live @ https://atlas-graphql.onrender.com/graphql
+As it is deployed on a free tier request may take time to process due to cold starts. 
 
 ## Relationships
 
@@ -34,11 +37,10 @@ The database is hosted on Supabase, providing a scalable and managed PostgreSQL 
 
 1. Clone the repository:
 2. Install dependencies: `npm install`
-3. populate .env file with database details
 4. `cd ./src`
 4. run migration - `npx sequelize db:migrate`
 5. run seeder - `npx sequelize db:seed:all`
-6. run npm start 
+6. run `npm start`
 
 ### Available Querys 
 
