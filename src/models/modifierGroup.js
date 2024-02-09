@@ -41,9 +41,9 @@ module.exports = (sequelize, DataTypes) => {
 
     // One-to-Many: ModifierGroup -> Modifier
     ModifierGroup.hasMany(models.Modifier, {
-        foreignKey: "modifierGroupId",
-        as: "modifiers",
-      });      
+      foreignKey: "modifierGroupId",
+      as: "modifiers",
+    });
   };
 
   return ModifierGroup;
