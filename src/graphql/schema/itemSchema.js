@@ -16,17 +16,9 @@ const itemSchema = gql`
   }
 
   type Mutation {
-    createProduct(
-      label: String!
-      description: String
-      price: Float!
-    ): Item
+    createProduct(label: String!, description: String, price: Float!): Item
 
-    createComponent(
-      label: String!
-      description: String
-      price: Float!
-    ): Item
+    createComponent(label: String!, description: String, price: Float!): Item
 
     updateItem(
       id: ID!
@@ -35,6 +27,9 @@ const itemSchema = gql`
       description: String
       price: Float
     ): Item
+
+    associateItemModifierGroup(itemId: ID!, modifierGroupId: ID!): Boolean
+
     deleteItem(id: ID!): Boolean
   }
 `;

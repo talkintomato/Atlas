@@ -9,7 +9,10 @@ const modifierGroupResolvers = {
     modifiers: async (modifierGroup) => await modifierGroup.getModifiers(),
   },
   Mutation: {
-    createModifierGroup: async (_, { label, selectionRequiredMin, selectionRequiredMax }) => {
+    createModifierGroup: async (
+      _,
+      { label, selectionRequiredMin, selectionRequiredMax },
+    ) => {
       try {
         const newModifierGroup = await ModifierGroup.create({
           label,
@@ -22,7 +25,10 @@ const modifierGroupResolvers = {
         throw new Error("Failed to create ModifierGroup.");
       }
     },
-    updateModifierGroup: async (_, { id, label, selectionRequiredMin, selectionRequiredMax }) => {
+    updateModifierGroup: async (
+      _,
+      { id, label, selectionRequiredMin, selectionRequiredMax },
+    ) => {
       try {
         const modifierGroup = await ModifierGroup.findByPk(id);
         if (!modifierGroup) {
@@ -51,19 +57,25 @@ const modifierGroupResolvers = {
       }
     },
     createModifierAndAssociate: async (_, input) => {
-      const { priceOverride, defaultQuantity, displayOrder, modifierGroupId, itemId } = input;
-      
+      const {
+        priceOverride,
+        defaultQuantity,
+        displayOrder,
+        modifierGroupId,
+        itemId,
+      } = input;
+
       // Step 1: Validate existence of ModifierGroup and Item
       const modifierGroup = await ModifierGroup.findByPk(modifierGroupId);
       if (!modifierGroup) {
         throw new Error("ModifierGroup not found");
       }
-  
+
       const item = await Item.findByPk(itemId);
       if (!item) {
         throw new Error("Item not found");
       }
-  
+
       // Step 2: Create the Modifier
       const newModifier = await Modifier.create({
         modifierGroupId,
@@ -72,7 +84,7 @@ const modifierGroupResolvers = {
         defaultQuantity,
         displayOrder,
       });
-  
+
       return newModifier;
     },
   },

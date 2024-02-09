@@ -1,4 +1,4 @@
-const { Item } = require("../../models");
+const { Item, ItemModifierGroup } = require("../../models");
 
 const itemResolvers = {
   Query: {
@@ -28,7 +28,10 @@ const itemResolvers = {
       try {
         return await item.getModifierGroups();
       } catch (error) {
-        console.error(`Failed to fetch modifier groups for item ID ${item.id}:`, error);
+        console.error(
+          `Failed to fetch modifier groups for item ID ${item.id}:`,
+          error,
+        );
         throw new Error("Failed to fetch modifier groups.");
       }
     },
@@ -74,6 +77,25 @@ const itemResolvers = {
       } catch (error) {
         console.error(`Error updating item with ID ${id}:`, error);
         throw new Error("Failed to update item.");
+      }
+    },
+    associateItemModifierGroup: async (_, { itemId, modifierGroupId }) => {
+      try {
+        // Check for existing association to prevent duplicates
+        const existingAssociation = await ItemModifierGroup.findOne({
+          where: { itemId, modifierGroupId },
+        });
+
+        if (existingAssociation) {
+          throw new Error("Association already exists");
+        }
+
+        // Create new association
+        await ItemModifierGroup.create({ itemId, modifierGroupId });
+        return true;
+      } catch (error) {
+        console.error(`Error associating Item and ModifierGroup:`, error);
+        throw new Error("Failed to associate Item and ModifierGroup.");
       }
     },
     deleteItem: async (_, { id }) => {
