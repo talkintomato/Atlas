@@ -3,7 +3,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable("ItemModifierGroup", {
-      itemid: {
+      itemId: {
         type: Sequelize.UUID,
         references: { model: "Item", key: "id" },
         onDelete: "CASCADE",

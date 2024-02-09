@@ -10,7 +10,7 @@ module.exports = {
         onUpdate: "CASCADE",
         primaryKey: true,
       },
-      ModifierGroup: {
+      modifierGroupId: {
         type: Sequelize.UUID,
         references: { model: "ModifierGroup", key: "id" },
         onDelete: "CASCADE",
