@@ -235,7 +235,7 @@ module.exports = {
       {
         itemId: "4019fbad-1717-4994-b77b-9f0a8553b340",
         modifierGroupId: "3eb7af47-7697-4c1a-a3eb-f5b9ddaeedc4",
-        displayOrder: 0,
+        displayOrder: 1,
         defaultQuantity: 0,
         priceOverride: 6.99,
         createdAt: new Date(),
