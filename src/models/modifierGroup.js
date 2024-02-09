@@ -15,13 +15,13 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      selection_required_min: {
+      selectionRequiredMin: {
         type: DataTypes.INTEGER,
-        allowNull: true, // Assuming this can be optional; adjust as needed
+        allowNull: true,
       },
-      selection_required_max: {
+      selectionRequiredMax: {
         type: DataTypes.INTEGER,
-        allowNull: true, // Assuming this can be optional; adjust as needed
+        allowNull: true,
       },
     },
     {

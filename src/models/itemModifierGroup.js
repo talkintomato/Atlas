@@ -1,49 +1,32 @@
 "use strict";
-
 module.exports = (sequelize, DataTypes) => {
-  const ModifierGroup = sequelize.define(
-    "ModifierGroup",
+  const ItemModifierGroup = sequelize.define(
+    "ItemModifierGroup",
     {
-      id: {
+      itemid: {
         type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        allowNull: false,
+        references: {
+          model: "Item",
+          key: "id",
+        },
         primaryKey: true,
-        allowNull: false,
-        unique: true,
       },
-      label: {
-        type: DataTypes.STRING,
+      modifierGroupId: {
+        type: DataTypes.UUID,
         allowNull: false,
-      },
-      selection_required_min: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      selection_required_max: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+        references: {
+          model: "ModifierGroup",
+          key: "id",
+        },
+        primaryKey: true,
       },
     },
     {
-      sequelize,
       timestamps: true,
-      tableName: "ModifierGroup"
+      sequelize,
+      tableName: "ItemModifierGroup",
     },
   );
-
-  ModifierGroup.associate = function (models) {
-    // Many-to-Many: ModifierGroup <-> Item
-    ModifierGroup.belongsToMany(models.Item, {
-      through: "ItemModifierGroup",
-      foreignKey: "ModifierGroupId",
-      otherKey: "ItemId",
-    });
-
-    // Many-to-Many: ModifierGroup <-> Modifier
-    ModifierGroup.hasMany(models.Modifier, {
-      foreignKey: "ModifierGroupId",
-    });
-  };
-
-  return ModifierGroup;
+  return ItemModifierGroup;
 };

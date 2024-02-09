@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   const MenuSection = sequelize.define(
     "MenuSection",
     {
-      MenuId: {
+      menuId: {
         type: DataTypes.UUID,
         allowNull: false,
         references: {
@@ -13,16 +13,16 @@ module.exports = (sequelize, DataTypes) => {
         },
         primaryKey: true,
       },
-      SectionId: {
+      sectionId: {
         type: DataTypes.UUID,
         allowNull: false,
         references: {
-          model: "Section", 
+          model: "Section",
           key: "id",
         },
         primaryKey: true,
       },
-      display_order: {
+      displayOrder: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },

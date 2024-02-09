@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable("MenuSection", {
-      MenuId: {
+      menuId: {
         type: Sequelize.UUID,
         allowNull: false,
         references: { model: "Menu", key: "id" },
@@ -11,7 +11,7 @@ module.exports = {
         onUpdate: "CASCADE",
         onDelete: "CASCADE",
       },
-      SectionId: {
+      sectionId: {
         type: Sequelize.UUID,
         allowNull: false,
         references: { model: "Section", key: "id" },
@@ -19,7 +19,7 @@ module.exports = {
         onUpdate: "CASCADE",
         onDelete: "CASCADE",
       },
-      display_order: {
+      displayOrder: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },

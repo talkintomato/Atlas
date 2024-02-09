@@ -12,10 +12,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      selection_required_min: {
+      selectionRequiredMin: {
         type: Sequelize.INTEGER,
       },
-      selection_required_max: {
+      selectionRequiredMax: {
         type: Sequelize.INTEGER,
       },
       createdAt: {
@@ -30,6 +30,6 @@ module.exports = {
   },
 
   down: async (queryInterface) => {
-    await queryInterface.dropTable("ModifierGroups");
+    await queryInterface.dropTable("ModifierGroup");
   },
 };

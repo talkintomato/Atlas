@@ -3,7 +3,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable("SectionItem", {
-      SectionId: {
+      sectionId: {
         type: Sequelize.UUID,
         allowNull: false,
         primaryKey: true,
@@ -14,7 +14,7 @@ module.exports = {
         onUpdate: "CASCADE",
         onDelete: "CASCADE",
       },
-      ItemId: {
+      itemId: {
         type: Sequelize.UUID,
         allowNull: false,
         primaryKey: true,
@@ -25,7 +25,7 @@ module.exports = {
         onUpdate: "CASCADE",
         onDelete: "CASCADE",
       },
-      display_order: {
+      displayOrder: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },

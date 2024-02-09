@@ -20,17 +20,17 @@ module.exports = (sequelize, DataTypes) => {
           key: "id",
         },
       },
-      display_order: {
+      displayOrder: {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      default_quantity: {
+      defaultQuantity: {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      price_override: {
+      priceOverride: {
         type: DataTypes.FLOAT,
       },
     },

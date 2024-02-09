@@ -13,12 +13,14 @@ module.exports.up = async (queryInterface, Sequelize) => {
     },
     label: {
       type: Sequelize.STRING,
+      allowNull: false,
     },
     description: {
       type: Sequelize.STRING,
     },
     price: {
       type: Sequelize.FLOAT,
+      allowNull: false,
     },
     createdAt: {
       allowNull: false,

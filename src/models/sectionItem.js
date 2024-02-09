@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   const SectionItem = sequelize.define(
     "SectionItem",
     {
-      SectionId: {
+      sectionId: {
         type: DataTypes.UUID,
         allowNull: false,
         references: {
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
           primaryKey: true,
         },
       },
-      ItemId: {
+      itemId: {
         type: DataTypes.UUID,
         allowNull: false,
         references: {
@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
           primaryKey: true,
         },
       },
-      display_order: {
+      displayOrder: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },

@@ -16,11 +16,11 @@ module.exports = {
         type: Sequelize.ENUM("active", "inactive"),
         allowNull: false,
       },
-      start_date: {
+      startDate: {
         type: Sequelize.DATE,
-        allowNull: false,
+        allowNull: true,
       },
-      end_date: {
+      endDate: {
         type: Sequelize.DATE,
         allowNull: true,
       },

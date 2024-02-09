@@ -8,7 +8,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
-        allowNull: false,
         unique: true,
       },
       label: {
@@ -19,11 +18,11 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.ENUM("active", "inactive"),
         allowNull: false,
       },
-      start_date: {
+      startDate: {
         type: DataTypes.DATE,
         allowNull: true,
       },
-      end_date: {
+      endDate: {
         type: DataTypes.DATE,
         allowNull: true,
       },

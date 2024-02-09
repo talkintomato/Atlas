@@ -17,17 +17,17 @@ module.exports = {
         onUpdate: "CASCADE",
         primaryKey: true,
       },
-      display_order: {
+      displayOrder: {
         type: Sequelize.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      default_quantity: {
+      defaultQuantity: {
         type: Sequelize.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      price_override: {
+      priceOverride: {
         type: Sequelize.FLOAT,
         allowNull: true,
       },
