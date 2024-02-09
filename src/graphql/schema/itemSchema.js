@@ -14,6 +14,29 @@ const itemSchema = gql`
     items: [Item]
     item(id: ID!): Item
   }
+
+  type Mutation {
+    createProduct(
+      label: String!
+      description: String
+      price: Float!
+    ): Item
+
+    createComponent(
+      label: String!
+      description: String
+      price: Float!
+    ): Item
+
+    updateItem(
+      id: ID!
+      type: String
+      label: String
+      description: String
+      price: Float
+    ): Item
+    deleteItem(id: ID!): Boolean
+  }
 `;
 
 module.exports = itemSchema;

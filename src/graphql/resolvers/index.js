@@ -13,8 +13,13 @@ const resolvers = {
     ...modifierResolvers.Query,
   },
 
-  // Mutation: {
-  // },
+  Mutation: {
+    ...menuResolvers.Mutation,
+    ...sectionResolvers.Mutation,
+    ...itemResolvers.Mutation,
+    ...modifierGroupResolvers.Mutation,
+    ...modifierResolvers.Mutation,
+  },
 
   Menu: menuResolvers.Menu,
   Section: sectionResolvers.Section,

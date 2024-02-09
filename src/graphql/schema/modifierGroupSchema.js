@@ -13,6 +13,17 @@ const modifierGroupSchema = gql`
     modifierGroups: [ModifierGroup]
     modifierGroup(id: ID!): ModifierGroup
   }
+
+  type Mutation {
+    createModifierGroup(label: String!, selectionRequiredMin: Int, selectionRequiredMax: Int): ModifierGroup
+    updateModifierGroup(id: ID!, label: String, selectionRequiredMin: Int, selectionRequiredMax: Int): ModifierGroup
+    deleteModifierGroup(id: ID!): Boolean
+    createModifierAndAssociate(priceOverride: Float,
+      defaultQuantity: Int,
+      displayOrder: Int,
+      modifierGroupId: ID!,
+      itemId: ID!): Modifier
+  } 
 `;
 
 module.exports = modifierGroupSchema;
