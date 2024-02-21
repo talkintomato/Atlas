@@ -34,12 +34,16 @@ module.exports = (sequelize, DataTypes) => {
 
   Section.associate = (models) => {
     Section.belongsToMany(models.Menu, {
+      as: 'menus',
       through: "MenuSection",
       foreignKey: "sectionId",
+      otherKey: "menuId",
     });
     Section.belongsToMany(models.Item, {
+      as: 'items',
       through: "SectionItem",
       foreignKey: "sectionId",
+      otherKey: "itemId",
     });
   };
 

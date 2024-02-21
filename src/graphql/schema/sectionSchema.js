@@ -7,6 +7,7 @@ const sectionSchema = gql`
     description: String
     isAvailable: Boolean
     items: [Item]
+    displayOrder: Int 
   }
 
   extend type Query {

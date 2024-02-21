@@ -46,6 +46,7 @@ module.exports = (sequelize, DataTypes) => {
   Item.associate = function (models) {
     // Many-to-Many: Section <-> Item
     Item.belongsToMany(models.Section, {
+      as: 'sections',
       through: "SectionItem",
       foreignKey: "itemId",
       otherKey: "sectionId",

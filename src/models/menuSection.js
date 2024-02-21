@@ -40,5 +40,12 @@ module.exports = (sequelize, DataTypes) => {
     },
   );
 
+  MenuSection.associate = function(models) {
+    this.belongsTo(models.Section, {
+      as: 'section', 
+      foreignKey: 'sectionId',
+    });
+  };
+
   return MenuSection;
 };

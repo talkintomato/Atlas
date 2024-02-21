@@ -10,6 +10,7 @@ const itemSchema = gql`
     isAvailable: Boolean
     link: String
     modifierGroups: [ModifierGroup!]!
+    displayOrder: Int 
   }
 
   extend type Query {
