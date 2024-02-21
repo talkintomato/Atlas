@@ -7,6 +7,8 @@ const itemSchema = gql`
     label: String
     description: String
     price: Float
+    isAvailable: Boolean
+    link: String
     modifierGroups: [ModifierGroup!]!
   }
 

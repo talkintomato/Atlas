@@ -5,6 +5,7 @@ const sectionSchema = gql`
     id: ID!
     label: String
     description: String
+    isAvailable: Boolean
     items: [Item]
   }
 

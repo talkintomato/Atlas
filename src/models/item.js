@@ -26,6 +26,15 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.FLOAT,
         allowNull: false,
       },
+      isAvailable: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+      }, 
+      link: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      }
     },
     {
       sequelize,
